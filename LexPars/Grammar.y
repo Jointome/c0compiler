@@ -45,14 +45,14 @@ return  {TokenRet}
 %left '&&' '||'
 %left '+' '-'
 %left '*' '/' '%'
-%left ';'x
+%left ';'
 
 %%
 
-MAIN:     typed                {$1}
+--MAIN:     typed                {$1}
 
-typed   : tint main '('')''{' Cmd return int ';' '}'           {Main TInt $6}
-        | tbool main '('')''{' Cmd return bool ';' '}'         {Main TBool $6}
+--typed   : tint main '('')''{' Cmd return int ';' '}'           {Main TInt $6}
+ --       | tbool main '('')''{' Cmd return bool ';' '}'         {Main TBool $6}
 
 Ucmd    : tint var '=' Exp    {DecE (TVar TInt $2) $4}
         | tbool var '=' Exp   {DecE (TVar TBool $2) $4}
@@ -149,7 +149,5 @@ data Command = Atrib Var Exp
   | WhileC Exp Command
   | Main Type Command
   deriving (Show)
-
-
 }
-	  
+

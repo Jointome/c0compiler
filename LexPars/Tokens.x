@@ -37,7 +37,6 @@ tokens :-
 	\==     {\s -> TokenEquals}
 --Types
 	int	{\s -> TokenTInt}
-	float	{\s -> TokenTFloat}
 	bool	{\s -> TokenTBool}
 -- main
 	main    {\s -> TokenMain}
